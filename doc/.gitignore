@@ -1,0 +1,4 @@
+Makefile
+pine.gpg.1
+*.in
+!.gitignore

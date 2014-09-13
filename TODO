@@ -1,0 +1,6 @@
+----
+TODO
+----
+ * Investigate display filter pause when using result file.
+
+ * Consider adding recursive decrypt/verify for nested PGP blocks.

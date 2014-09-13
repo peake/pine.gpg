@@ -1,0 +1,51 @@
+-----------------------------------------
+PINE.GPG - Bringing together PINE and GPG
+-----------------------------------------
+
+PINE.GPG is a message filter for (Al)pine, giving it the ability to interface
+with GnuPG.  It lets the user verify signed incoming messages, decrypt
+encrypted incoming messages, and encrypt and/or sign outgoing messages.
+
+It was coded under Linux so it should compile and run on any modern distro
+with gcc and glibc installed.  Other platforms are currently untested, but
+any feedback and/or patches are welcome.
+
+There are quite a few "PGP" type filters available for (Al)pine.  Here's some
+information for helping to decide if PINE.GPG is right for you:
+
+Some advantages over other PGP filters:
+
+  Accounts for text outside of PGP message blocks.
+  Able to handle multiple PGP messages per email.
+  Fast, optimized C code.
+  Easy to set up and use with no external dependencies or config files to edit.
+
+Some disadvantages over other PGP filters:
+
+  Only supports GnuPG, no support for any other PGP software.
+
+See pine.gpg(1) for program usage and other info.
+
+PINE.GPG ("this program") is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License version 2 as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the LICENSE file distributed with this program
+for more details.
+
+You should have received a copy of the GNU General Public License version 2
+along with this program; if not, please write to:
+
+  Free Software Foundation
+  51 Franklin Street, Fifth Floor
+  Boston, MA 02110-1301
+  USA
+
+Original source for this program available at:
+
+  <http://www.absolutedigital.net/projects/pine.gpg/>
+  <http://github.com/peake/pine.gpg/>
+
+-- 

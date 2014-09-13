@@ -1,0 +1,26 @@
+First, the program needs to be configured, built, and installed using the
+following commands:
+
+  $ ./configure
+  $ make
+  # make install
+
+Next, three filters need to be set up in your (Al)pine configuration.  To get
+to (Al)pine's configuration editor, use the following key sequence from within
+(Al)pine: m s c
+
+  Add these display filters (line broken for readability):
+
+    _BEGINNING("-----BEGIN PGP MESSAGE-----")_ \
+      /usr/local/bin/pine.gpg -d -i _TMPFILE_
+
+    _BEGINNING("-----BEGIN PGP SIGNED MESSAGE-----")_ \
+      /usr/local/bin/pine.gpg -d -i _TMPFILE_
+
+  Add this sending filter:
+
+    /usr/local/bin/pine.gpg -s -i _TMPFILE_ -r _RESULTFILE_ _RECIPIENTS_
+
+To exit the config editor and save the changes, use the key sequence: e y
+
+Finally, enjoy!

@@ -1,0 +1,86 @@
+---------------------------
+Version 1.3.0 - 13 Sep 2014
+---------------------------
+ * Substantial rewrite of the existing codebase.
+ * Data processing is now fully binary safe.
+ * Use anonymous pipes instead of temporary files for internal IPC.
+ * Replace system(3) calls with fork(2)+exec(3).
+ * [NEW] Display filter can now handle multiple PGP messages per email as well
+   as better handle text outside of PGP message blocks.
+ * Command-line option to print version information (formerly -v) is now -V.
+ * [NEW] Command-line option -v (formerly print version) is now for specifying
+   verbosity level of GPG output.  Can be used twice for more verbosity.
+   See gpg(1), option --verbose for additional information.
+ * [SECURITY] Disable core dumps to help prevent leakage of sensitive data.
+ * [OBSOLETE] Command-line option -t is still accepted (this may change in
+   the future) but now ignored as we no longer use temporary files for IPC.
+ * [DEPRECATED] Command-line option -e is now -s.  Option -e is still accepted
+   as an alias of -s, but this may change in the future.
+ * [NEW] Command-line option -r added for specifying a filter result file.
+   See UPGRADING file for a caveat regarding this feature.
+ * [NEW] Command-line option -k added for specifying a default signing key.
+ * [NEW] Command-line options -S (sign), -E (encrypt), and -B (both) added to
+   use sending filter without prompting.
+ * [NEW] Command-line option -g added for specifying an alternative path at
+   runtime to the GPG binary.
+ * [NEW] Abort option added to the sending filter prompt.
+ * [NEW] Sending filter prompt now allows for the selection of function without
+   the need to press the ENTER key after character input.
+ * Documentation updated.
+
+Version 1.2.0 - Never released
+------------------------------
+ * Unfinished and abandoned.
+
+Version 1.1.4 - 15 Nov 2004
+---------------------------
+ * encrypt.c: fixed an off-by-one memory allocation bug for recipient list
+
+Version 1.1.3 - 09 Aug 2004
+---------------------------
+ * fixed typo in INSTALL
+
+Version 1.1.2 - 08 Aug 2004
+---------------------------
+ * more optimizations
+ * fixed typo in pine.gpg.1
+
+Version 1.1.1 - 08 Aug 2004
+---------------------------
+ * code clean-ups and optimizations
+
+Version 1.1.0 - 07 Aug 2004
+---------------------------
+ * encrypt, decrypt: FILE *stdin, *stdout, *stderr are constants so we need 
+   another set of matching variables when re-assigning them; thanks to
+   Andrew D. Hwang for catching this
+ * main, encrypt, decrypt: __FUNCTION__ is a GCC extension of the 
+   C99 __func__ so we should check if it's defined and define it if not
+ * switched to an autoconf generated configure script
+ * fixed a typo in the README
+
+Version 1.0.0 - 04 Aug 2004
+---------------------------
+ * first public release
+
+Version 0.4.3 - 03 Aug 2004
+---------------------------
+ * final code clean-up
+ * minor bug fixes
+
+Version 0.4.2 - 03 Aug 2004
+---------------------------
+ * documentation complete
+
+Version 0.4.1 - 03 Aug 2004
+---------------------------
+ * better error handling in encrypt
+ * bug fix for recipient list in encrypt
+
+Version 0.4.0 - 01 Aug 2004
+---------------------------
+ * program code complete
+
+Version 0.3.0 - 31 Jul 2004
+---------------------------
+ * first usable version

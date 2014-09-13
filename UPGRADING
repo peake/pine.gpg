@@ -1,0 +1,28 @@
+---------------------------------------------
+Upgrading from version 1.1.x to version 1.3.0
+---------------------------------------------
+
+The sending filter prompt now no longer requires the user to press the ENTER
+key after character input.  This matches (Al)pine's behavior and should be
+easy to adapt to.
+
+The -e option is deprecated and has been replaced by the -s option.  It is
+still accepted as an alias of -s, but should be changed to -s in one's
+configured filters as it may be removed in a future release.
+
+The -t option is now obsolete.  It is still accepted, but should be removed
+from one's configured filters as it may be removed in a future release.
+
+The -r option is available to have PINE.GPG print its completion status or any
+errors to a temporary file that is read back by (Al)pine and either displayed
+in the status area if there is enough room, or in its own viewer window
+otherwise.  If this option is not specified, any error encountered will cause
+the program to halt and require the user to acknowledge the error by pressing
+the ENTER key.  See the INSTALL file for how to make use of this feature.
+
+****************   NOTICE REGARDING RESULT FILE (-r) OPTION   *****************
+In testing this feature, routine delays were experienced when using it with
+the display filter.  If you use this option and get a second or more pause
+coupled with a blank screen between selecting an email message and its contents
+being displayed, remove this option from your configured display filters.
+*******************************************************************************

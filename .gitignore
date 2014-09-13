@@ -1,0 +1,11 @@
+Makefile
+config.*
+configure
+depcomp
+install-sh
+missing
+*.cache
+*.in
+*.m4
+.*
+!.gitignore
