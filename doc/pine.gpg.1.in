@@ -1,0 +1,102 @@
+.TH "@PACKAGE@" "1" "@RELEASE_DATE@" "@PACKAGE_STRING@" "@PACKAGE_NAME@"
+.SH "NAME"
+.LP
+pine.gpg \- Bringing together PINE and GPG
+.SH "SYNOPSIS"
+.B pine.gpg
+.B \-d
+.RB [ \-v \.\.\.]\|
+.RB [ \-r
+.IR FILE ]
+.B \-i
+.I FILE
+.br
+.B pine.gpg
+.B \-s
+.RB [ \-v \.\.\.]\|
+.RB [ \-r
+.IR FILE ]
+.B \-i
+.I FILE
+.I recipient
+.RI [ recipient \.\.\.]
+.SH "DESCRIPTION"
+.LP
+PINE.GPG is a message filter for (Al)pine, giving it the ability to interface with GnuPG.
+It lets the user verify signed incoming messages, decrypt encrypted incoming messages, and encrypt and/or sign outgoing messages.
+.SH "OPTIONS"
+.TP
+.BR \-d
+Display filter mode: decrypt and/or verify.
+.TP
+.BR \-s
+Sending filter mode: encrypt and/or sign.
+.TP
+.BR \-S
+Sending filter mode: sign without prompting.
+.TP
+.BR \-E
+Sending filter mode: encrypt without prompting.
+.TP
+.BR \-B
+Sending filter mode: sign and encrypt without prompting.
+.TP
+.BR \-i\ \fIFILE\fR
+Read program input from \fIFILE\fR and later write program output back to it.
+\fIFILE\fR will usually be the (Al)pine token: _TMPFILE_
+.TP
+.BR \-r\ \fIFILE\fR
+Write completion status or error message(s) to \fIFILE\fR.
+If this option is not specified, error messages will be displayed to the user interactively outside of (Al)pine.
+\fIFILE\fR will usually be the (Al)pine token: _RESULTFILE_
+.TP
+.IR recipient
+The address of the recipient of the message.
+At least one is required for sending mode, but more may be given.
+Any and all are ignored in display mode.
+This will usually be the (Al)pine token: _RECIPIENTS_
+.TP
+.BR \-g\ \fIPATH\fR
+Use \fIPATH\fR as the full path of the gpg(1) binary.
+This overrides the compile\-time hard\-coded value.
+.TP
+.BR \-k\ \fIkey\fR
+Use \fIkey\fR as the default signing key.
+.TP
+.BR \-v
+Tell GPG to be verbose in its output.
+Use twice for greater effect.
+.TP
+.BR \-h
+Print program help and exit.
+.TP
+.BR \-V
+Print program version and exit.
+.SH "EXIT STATUS"
+.LP
+Zero (0) if filtering completed successfully, or one (1) if any errors occurred.
+.SH "EXAMPLE (DISPLAY FILTER)"
+.nf
+_BEGINNING("\-\-\-\-\-BEGIN PGP MESSAGE\-\-\-\-\-")_ \\
+    @prefix@/bin/pine.gpg \-d \-i _TMPFILE_
+.LP
+_BEGINNING("\-\-\-\-\-BEGIN PGP SIGNED MESSAGE\-\-\-\-\-")_ \\
+    @prefix@/bin/pine.gpg \-d \-i _TMPFILE_
+.fi
+.SH "EXAMPLE (SENDING FILTER)"
+.nf
+@prefix@/bin/pine.gpg \-s \-i _TMPFILE_ \-r _RESULTFILE_ _RECIPIENTS_
+.fi
+.SH "AUTHOR"
+.LP
+Written by Cal Peake <cp@absolutedigital.net>
+.SH "COPYRIGHT"
+.LP
+Copyright (C) 2004\-2014 Calvin E. Peake, Jr.
+.SH "BUGS"
+.LP
+Please report bugs to <@PACKAGE_BUGREPORT@>.
+Comments, suggestions, and patches are also welcome.
+.SH "SEE ALSO"
+.LP
+alpine(1), pine(1), gpg(1)
