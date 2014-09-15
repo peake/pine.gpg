@@ -52,12 +52,12 @@ static void decrypt_message(const char *input, const int input_len,
 	char buf[buf_size], errmsg[64];
 	ssize_t bytes, bytes_read, total;
 
-	static const char *trl = "--[PINE.GPG]----------------------------"
-				 "---------------------------------[TOP]--\n",
-			  *grl = "--[PINE.GPG]----------------------------"
-				 "---------------------------------[GPG]--\n",
-			  *erl = "--[PINE.GPG]----------------------------"
-				 "---------------------------------[END]--\n";
+	static const char *trl = "--[PINE.GPG]--------------------------"
+				 "-------------------------------[TOP]--\n",
+			  *grl = "--[PINE.GPG]--------------------------"
+				 "-------------------------------[GPG]--\n",
+			  *erl = "--[PINE.GPG]--------------------------"
+				 "-------------------------------[END]--\n";
 
 	if (pipe(pin) == -1)
 		die_x(EXIT_FAILURE, errno, result_file,

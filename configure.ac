@@ -15,12 +15,12 @@ dnl
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT([PINE.GPG],
-	[1.3.0],
+	[1.3.1-rc1],
 	[cp@absolutedigital.net],
 	[pine.gpg],
 	[http://www.absolutedigital.net/projects/pine.gpg/])
 
-RELEASE_DATE="13 Sep 2014"
+RELEASE_DATE="15 Sep 2014"
 
 AC_CONFIG_HEADER([src/config.h])
 AC_CONFIG_SRCDIR([src/pinegpg.c])

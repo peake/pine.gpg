@@ -32,7 +32,7 @@
 
 #include "config.h"
 
-static const char *program_version = "1.3.0";
+static const char *program_version = "1.3.1-rc1";
 
 static void pr_usage(const char *program_name)
 {
