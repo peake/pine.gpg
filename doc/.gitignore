@@ -1,4 +1,4 @@
 Makefile
 pine.gpg.1
-*.in
+!pine.gpg.1.in
 !.gitignore
